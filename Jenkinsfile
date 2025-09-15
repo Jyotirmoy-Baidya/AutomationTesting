@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                echo "Code started in docker"
+                bat echo "Code started in docker"
                 checkout scm
             }
         }
