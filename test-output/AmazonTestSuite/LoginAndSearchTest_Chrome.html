@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>LoginAndSearchTest_Chrome</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>13/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>10/3/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Sep 08 11:19:40 IST 2025</td>
+<td>Started on:</td><td>Mon Sep 15 10:48:37 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>74 seconds (74234 ms)</td>
+<tr><td>Total time:</td><td>131 seconds (131447 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,129 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='tests.CartTest.placeOrder()'><b>placeOrder</b><br>Test class: tests.CartTest</td>
+<td><div><pre>java.lang.AssertionError: ❌ Cannot place order! expected [true] but found [false]
+	at tests.CartTest.placeOrder(CartTest.java:57)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace509233162", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace509233162'><pre>java.lang.AssertionError: ❌ Cannot place order! expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at tests.CartTest.placeOrder(CartTest.java:57)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</pre></div></td>
+<td>10</td>
+<td>tests.CartTest@367ffa75</td></tr>
+<tr>
+<td title='tests.CartTest.deleteFromCart()'><b>deleteFromCart</b><br>Test class: tests.CartTest</td>
+<td><div><pre>java.lang.AssertionError: ❌ Product removal message not shown! expected [true] but found [false]
+	at tests.CartTest.deleteFromCart(CartTest.java:40)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace14145076", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace14145076'><pre>java.lang.AssertionError: ❌ Product removal message not shown! expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at tests.CartTest.deleteFromCart(CartTest.java:40)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</pre></div></td>
+<td>10</td>
+<td>tests.CartTest@367ffa75</td></tr>
+<tr>
+<td title='tests.CartTest.buyProducts()'><b>buyProducts</b><br>Test class: tests.CartTest</td>
+<td><div><pre>java.lang.AssertionError: ❌ Address does not match expected! expected [true] but found [false]
+	at tests.CartTest.buyProducts(CartTest.java:50)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1785678985", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1785678985'><pre>java.lang.AssertionError: ❌ Address does not match expected! expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at tests.CartTest.buyProducts(CartTest.java:50)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</pre></div></td>
+<td>20</td>
+<td>tests.CartTest@367ffa75</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -76,70 +199,55 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='tests.CartTest.cartAddTest()'><b>cartAddTest</b><br>Test class: tests.CartTest</td>
-<td></td>
-<td>6</td>
-<td>tests.CartTest@1c1bbc4e</td></tr>
-<tr>
-<td title='tests.CartTest.buyProducts()'><b>buyProducts</b><br>Test class: tests.CartTest</td>
-<td></td>
-<td>5</td>
-<td>tests.CartTest@1c1bbc4e</td></tr>
-<tr>
-<td title='tests.CartTest.deleteFromCart()'><b>deleteFromCart</b><br>Test class: tests.CartTest</td>
+<td title='tests.SearchTest.testApplyFilters()'><b>testApplyFilters</b><br>Test class: tests.SearchTest</td>
 <td></td>
 <td>1</td>
-<td>tests.CartTest@1c1bbc4e</td></tr>
-<tr>
-<td title='tests.SearchTest.testBlankSearch()'><b>testBlankSearch</b><br>Test class: tests.SearchTest</td>
-<td></td>
-<td>2</td>
-<td>tests.SearchTest@ba2f4ec</td></tr>
+<td>tests.SearchTest@2cd76f31</td></tr>
 <tr>
 <td title='tests.SearchTest.testSortLowToHigh()'><b>testSortLowToHigh</b><br>Test class: tests.SearchTest</td>
 <td></td>
-<td>2</td>
-<td>tests.SearchTest@ba2f4ec</td></tr>
+<td>1</td>
+<td>tests.SearchTest@2cd76f31</td></tr>
+<tr>
+<td title='tests.CartTest.modifyQuantity()'><b>modifyQuantity</b><br>Test class: tests.CartTest</td>
+<td></td>
+<td>10</td>
+<td>tests.CartTest@367ffa75</td></tr>
 <tr>
 <td title='tests.SearchTest.testViewProductDetails()'><b>testViewProductDetails</b><br>Test class: tests.SearchTest</td>
 <td></td>
 <td>8</td>
-<td>tests.SearchTest@ba2f4ec</td></tr>
-<tr>
-<td title='tests.CartTest.modifyQuantity()'><b>modifyQuantity</b><br>Test class: tests.CartTest</td>
-<td></td>
-<td>4</td>
-<td>tests.CartTest@1c1bbc4e</td></tr>
-<tr>
-<td title='tests.CartTest.placeOrder()'><b>placeOrder</b><br>Test class: tests.CartTest</td>
-<td></td>
-<td>0</td>
-<td>tests.CartTest@1c1bbc4e</td></tr>
-<tr>
-<td title='tests.LoginTest.verifyLoginTest()'><b>verifyLoginTest</b><br>Test class: tests.LoginTest</td>
-<td></td>
-<td>4</td>
-<td>tests.LoginTest@302552ec</td></tr>
+<td>tests.SearchTest@2cd76f31</td></tr>
 <tr>
 <td title='tests.LoginTest.invalidLoginTest()'><b>invalidLoginTest</b><br>Test class: tests.LoginTest</td>
 <td></td>
 <td>5</td>
-<td>tests.LoginTest@302552ec</td></tr>
+<td>tests.LoginTest@4e08711f</td></tr>
 <tr>
-<td title='tests.LoginTest.validLoginTest()'><b>validLoginTest</b><br>Test class: tests.LoginTest</td>
+<td title='tests.SearchTest.testBlankSearch()'><b>testBlankSearch</b><br>Test class: tests.SearchTest</td>
 <td></td>
-<td>9</td>
-<td>tests.LoginTest@302552ec</td></tr>
+<td>2</td>
+<td>tests.SearchTest@2cd76f31</td></tr>
 <tr>
-<td title='tests.SearchTest.testApplyFilters()'><b>testApplyFilters</b><br>Test class: tests.SearchTest</td>
+<td title='tests.CartTest.cartAddTest()'><b>cartAddTest</b><br>Test class: tests.CartTest</td>
 <td></td>
-<td>10</td>
-<td>tests.SearchTest@ba2f4ec</td></tr>
+<td>32</td>
+<td>tests.CartTest@367ffa75</td></tr>
+<tr>
+<td title='tests.LoginTest.verifyLoginTest()'><b>verifyLoginTest</b><br>Test class: tests.LoginTest</td>
+<td></td>
+<td>3</td>
+<td>tests.LoginTest@4e08711f</td></tr>
 <tr>
 <td title='tests.SearchTest.testSearchProduct()'><b>testSearchProduct</b><br>Test class: tests.SearchTest</td>
 <td></td>
-<td>6</td>
-<td>tests.SearchTest@ba2f4ec</td></tr>
+<td>4</td>
+<td>tests.SearchTest@2cd76f31</td></tr>
+<tr>
+<td title='tests.LoginTest.validLoginTest()'><b>validLoginTest</b><br>Test class: tests.LoginTest</td>
+<td></td>
+<td>15</td>
+<td>tests.LoginTest@4e08711f</td></tr>
 </table><p>
 </body>
 </html>

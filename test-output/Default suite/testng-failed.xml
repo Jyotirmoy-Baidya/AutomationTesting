@@ -3,11 +3,33 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
+      <class name="tests.LoginTest">
+        <methods>
+          <include name="verifyLoginTest"/>
+          <include name="invalidLoginTest"/>
+          <include name="setDriver"/>
+          <include name="validLoginTest"/>
+        </methods>
+      </class> <!-- tests.LoginTest -->
+      <class name="tests.SearchTest">
+        <methods>
+          <include name="testViewProductDetails"/>
+          <include name="testSearchProduct"/>
+          <include name="setup"/>
+          <include name="testApplyFilters"/>
+          <include name="testBlankSearch"/>
+          <include name="testSortLowToHigh"/>
+        </methods>
+      </class> <!-- tests.SearchTest -->
       <class name="tests.CartTest">
         <methods>
+          <include name="modifyQuantity"/>
+          <include name="placeOrder"/>
+          <include name="deleteFromCart"/>
+          <include name="cartAddTest"/>
           <include name="quitBrowser"/>
+          <include name="buyProducts"/>
           <include name="setDriver"/>
-          <include name="test"/>
         </methods>
       </class> <!-- tests.CartTest -->
     </classes>

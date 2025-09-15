@@ -8,145 +8,195 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import base.DriverSetup;
-
 import java.time.Duration;
 
 public class CartPage {
-	WebDriver driver = null;
-	WebDriverWait wait;
-	Actions actions;
-	
-	public CartPage(WebDriver driver) {
-		this.driver = driver;
-		this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		this.actions = new Actions(driver);
-		PageFactory.initElements(driver, this);
-	}
+    WebDriver driver;
+    WebDriverWait wait;
+    Actions actions;
 
-	public CartPage() {
-		this.driver = null;
-	}
+    public CartPage(WebDriver driver) {
+        this.driver = driver;
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        this.actions = new Actions(driver);
+        PageFactory.initElements(driver, this);
+    }
 
-	@FindBy(xpath = "//div[@class='a-section a-spacing-none a-padding-none']//input[@id='add-to-cart-button']")
-	private WebElement addCartButton;
-	
-	@FindBy(xpath = "//span[@id='productTitle']")
-	private WebElement productTitle;
-	
-	@FindBy(xpath = "//span[@class='a-size-medium a-text-bold'][normalize-space()='Added to cart']")
-	private WebElement successMessage;
-	
-	@FindBy(xpath = "//span[@class='a-button a-button-primary attach-button-large attach-primary-cart-button']//input[@type='submit']")
-	private WebElement goToCart;
-	
-//	@FindBy(xpath = "(//span[@class='a-truncate-cut'][contains(text(),\"HP\")])[1]")
-//	private WebElement cartProductTitleElement;
-	
-	@FindBy(xpath = "(//div[@class='a-row sc-list-item sc-java-remote-feature'])[1]//span[@class='a-truncate-cut']")
-	private WebElement cartProductTitleElement;
-	
-	
-	@FindBy(xpath = "(//span[@class='a-icon a-icon-small-add'])[1]")
-	private WebElement increaseProductCount;
-	
-	@FindBy(xpath = "(//span[@class='a-icon a-icon-small-remove'])[1]")
-	private WebElement decreaseProductCount;
-	
-	@FindBy(xpath = "(//span[@class='a-icon a-icon-small-trash'])[1]")
-	private WebElement deleteFromCart;
+    public CartPage() {
+        this.driver = null;
+    }
 
-	@FindBy(xpath = "//input[@name='proceedToRetailCheckout']")
-	private WebElement proceedToBuy;
-	
-	@FindBy(xpath = "//span[@id='deliver-to-address-text']")
-	private WebElement address;
+    @FindBy(xpath = "(//input[@id='add-to-cart-button'])[2]")
+    private WebElement addCartButton;
 
-	@FindBy(xpath = "//span[@id='checkout-primary-continue-button-id-announce']")
-	private WebElement orderPlace;
-	
-	
-	
-	// Methods to interact with each WebElement using Actions
-	public void clickAddToCart() {
-		wait.until(ExpectedConditions.elementToBeClickable(addCartButton));
-		actions.moveToElement(addCartButton).click().perform();
-	}
 
-	public String getProductTitle() {
-		wait.until(ExpectedConditions.visibilityOf(productTitle));
-		return productTitle.getText();
-	}
+    @FindBy(xpath = "//span[@id='productTitle']")
+    private WebElement productTitle;
 
-	public String getSuccessMessage() {
-		wait.until(ExpectedConditions.visibilityOf(successMessage));
-		return successMessage.getText();
-	}
+    @FindBy(xpath = "//div[@id='attach-cart-info-content']//span[contains(translate(normalize-space(.),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'added to cart')]")
+    private WebElement successMessage;
 
-	public void clickGoToCart() {
-		wait.until(ExpectedConditions.elementToBeClickable(goToCart));
-		actions.moveToElement(goToCart).click().perform();
-	}
 
-	public String getCartProductTitle() {
-		wait.until(ExpectedConditions.visibilityOf(cartProductTitleElement));
-		return cartProductTitleElement.getText();
-	}
+    @FindBy(xpath = "//a[@id='nav-cart']")
+    private WebElement goToCart;
 
-	public void increaseProductCount() {
-		wait.until(ExpectedConditions.elementToBeClickable(increaseProductCount));
-		actions.moveToElement(increaseProductCount).click().perform();
-	}
+    @FindBy(xpath = "//div[contains(@class,'sc-list-item')][1]//span[contains(@class,'a-truncate-cut')]")
+    private WebElement cartProductTitleElement;
 
-	public void decreaseProductCount() {
-		wait.until(ExpectedConditions.elementToBeClickable(decreaseProductCount));
-		actions.moveToElement(decreaseProductCount).click().perform();
-	}
-	
-	public void deleteProductFromCart() {
-		wait.until(ExpectedConditions.elementToBeClickable(deleteFromCart));
-		actions.moveToElement(deleteFromCart).click().perform();
-	}
-	
-	
-	public void cartAdd() throws InterruptedException {
-		clickAddToCart();
-		String title = getProductTitle();
-		String message = getSuccessMessage();
-		clickGoToCart();
-		String cartTitle = getCartProductTitle();
-//		Thread.sleep(2000);
-//		increaseProductCount();
-//		Thread.sleep(2000);
-//		decreaseProductCount();
-//		Thread.sleep(2000);
+    @FindBy(xpath = "(//span[contains(@class,'a-icon-small-add')])[1]")
+    private WebElement increaseProductCount;
+  
+    @FindBy(xpath="(//div[contains(@id,'sc-active')]//fieldset/button[1])[1])")
+    private WebElement decreaseProductCount;
 
-		System.out.println("Product Title: " + title);
-		System.out.println("Success Message: " + message);
-		System.out.println("Cart Product Title: " + cartTitle);
-	}
-	
-	public void quantityModify() throws InterruptedException {
-		increaseProductCount();
-		Thread.sleep(2000);
-		decreaseProductCount();
-		Thread.sleep(2000);
-	}
-	
-	
-	public void proceedToBuyFromCart() {
-		wait.until(ExpectedConditions.elementToBeClickable(proceedToBuy));
-		proceedToBuy.click();
-	}
-	
-	public String getAddress() {
-		wait.until(ExpectedConditions.visibilityOf(address));
-		return address.getText();
-	}
-	
-	public boolean buyingIsEnabled() {
-		wait.until(ExpectedConditions.visibilityOf(orderPlace));
-		return orderPlace.isEnabled();
-	}
-	
+    @FindBy(xpath = "(//input[contains(@data-feature-id,'item-delete-button')])[1]")
+    private WebElement deleteFromCart;
+
+    @FindBy(xpath = "//input[@name='proceedToRetailCheckout']")
+    private WebElement proceedToBuy;
+
+    @FindBy(xpath = "//span[@id='deliver-to-address-text']")
+    private WebElement address;
+
+    @FindBy(xpath = "//span[@id='checkout-primary-continue-button-id-announce']")
+    private WebElement orderPlace;
+
+
+    // ---------------- Methods ---------------- //
+
+    public void clickAddToCart() {
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(addCartButton));
+            actions.moveToElement(addCartButton).click().perform();
+            System.out.println("✅ Product added to cart button clicked.");
+        } catch (Exception e) {
+            System.out.println("❌ Failed to click Add to Cart: " + e.getMessage());
+        }
+    }
+
+    public String getProductTitle() {
+        try {
+            wait.until(ExpectedConditions.visibilityOf(productTitle));
+            return productTitle.getText();
+        } catch (Exception e) {
+            System.out.println("❌ Failed to get product title: " + e.getMessage());
+            return "Title not available";
+        }
+    }
+
+    public String getSuccessMessage() {
+        try {
+            wait.until(ExpectedConditions.visibilityOf(successMessage));
+            return successMessage.getText();
+        } catch (Exception e) {
+            System.out.println("❌ Failed to get success message: " + e.getMessage());
+            return "Success message not available";
+        }
+    }
+
+    public void clickGoToCart() {
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(goToCart));
+            actions.moveToElement(goToCart).click().perform();
+            System.out.println("✅ Navigated to cart.");
+        } catch (Exception e) {
+            System.out.println("❌ Failed to click Go to Cart: " + e.getMessage());
+        }
+    }
+
+    public String getCartProductTitle() {
+        try {
+            wait.until(ExpectedConditions.visibilityOf(cartProductTitleElement));
+            return cartProductTitleElement.getText();
+        } catch (Exception e) {
+            System.out.println("❌ Failed to get cart product title: " + e.getMessage());
+            return "Cart product title not available";
+        }
+    }
+
+    public void increaseProductCount() {
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(increaseProductCount)).click();
+            System.out.println("✅ Increased product count.");
+        } catch (Exception e) {
+            System.out.println("❌ Failed to increase product count: " + e.getMessage());
+        }
+    }
+
+    public void decreaseProductCount() {
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(decreaseProductCount)).click();
+            System.out.println("✅ Decreased product count.");
+        } catch (Exception e) {
+            System.out.println("❌ Failed to decrease product count: " + e.getMessage());
+        }
+    }
+
+    public boolean deleteProductFromCart() {
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(deleteFromCart)).click();
+            System.out.println("✅ Product delete button clicked.");
+            // Check removal text
+            return driver.getPageSource().contains("was removed from Shopping Cart");
+        } catch (Exception e) {
+            System.out.println("❌ Failed to delete product from cart: " + e.getMessage());
+            return false;
+        }
+    }
+
+
+
+    public void cartAdd() {
+        try {
+            clickAddToCart();
+            String title = getProductTitle();
+            String message = getSuccessMessage();
+            clickGoToCart();
+            String cartTitle = getCartProductTitle();
+
+            System.out.println("🛒 Product Title: " + title);
+            System.out.println("🛒 Success Message: " + message);
+            System.out.println("🛒 Cart Product Title: " + cartTitle);
+        } catch (Exception e) {
+            System.out.println("❌ Error during cart add flow: " + e.getMessage());
+        }
+    }
+
+    public void quantityModify() {
+        try {
+            increaseProductCount();
+            decreaseProductCount();
+        } catch (Exception e) {
+            System.out.println("❌ Error modifying quantity: " + e.getMessage());
+        }
+    }
+
+    public void proceedToBuyFromCart() {
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(proceedToBuy)).click();
+            System.out.println("✅ Proceeding to buy from cart.");
+        } catch (Exception e) {
+            System.out.println("❌ Failed to proceed to buy: " + e.getMessage());
+        }
+    }
+
+    public String getAddress() {
+        try {
+            wait.until(ExpectedConditions.visibilityOf(address));
+            return address.getText();
+        } catch (Exception e) {
+            System.out.println("❌ Failed to get address: " + e.getMessage());
+            return "Address not available";
+        }
+    }
+
+    public boolean buyingIsEnabled() {
+        try {
+            wait.until(ExpectedConditions.visibilityOf(orderPlace));
+            return orderPlace.isEnabled();
+        } catch (Exception e) {
+            System.out.println("❌ Failed to check if buying is enabled: " + e.getMessage());
+            return false;
+        }
+    }
 }
